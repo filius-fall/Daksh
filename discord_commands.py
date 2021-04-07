@@ -14,8 +14,13 @@ async def p(c):                                 # name of the function should be
 
 
 @commands.command()
-async def hello(d,arg=VALUE):
-    await d.send(arg)
+async def hello(d,arg=VALUE,*args):
+    
+    await d.send("Hello {}".format(arg))
+
+    for i in args:
+        await d.send("Hello {}".format(i))
+
 
 bot.add_command(p)
 bot.add_command(hello)
