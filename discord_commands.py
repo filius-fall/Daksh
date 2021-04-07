@@ -13,7 +13,7 @@ async def p(c):                                 # name of the function should be
     await c.send("HEY")                         # the argument can be anything you used c others can also be used
 
 
-@commands.command()
+@commands.command(description="This says hello",brief="This is brief")
 async def hello(d,arg=VALUE,*args):
     
     await d.send("Hello {}".format(arg))
