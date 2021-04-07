@@ -26,7 +26,7 @@ class MyClient(discord.Client):
         if cmd == "!name":
             print(message.author.name)
             print('hhhh')
-            await message.channel.send("!name")
+            await message.channel.send('Hello {}'.format(message.mentions.name))
 
 client = MyClient()
 client.run(TOKEN)
