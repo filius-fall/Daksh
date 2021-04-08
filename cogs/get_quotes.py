@@ -3,6 +3,7 @@ from settings import *
 import os
 import json
 import random
+import discord
 
 
 class Quotes(commands.Cog):
@@ -10,13 +11,19 @@ class Quotes(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def quotes(self,ctx):
+    async def quotes(self,ctx,member:discord.Member = None):
         with open(os.path.join(DATA_DIR,'quotes.json')) as quotes_file:
             quote = json.load(quotes_file)
         random_quote = random.choice(list(quote.keys()))
         r = random.choice(quote[random_quote])
+
+
+        if member is not None:
+            await ctx.send("%s eat this %s" %(member.name,r['quote']))
+        else:
+            await ctx.send("%s for yourself: %s" %(ctx.message.author.name,r['quote']))
         
-        await ctx.send(r['quote'])
+        
         # print(r['quote'])
 
         
