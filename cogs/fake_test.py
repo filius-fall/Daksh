@@ -11,7 +11,7 @@ class SelfDestruct(commands.Cog):
         while arg > 0:
             await c.send('Self Destrucuting in {} secs'.format(arg))
             if arg == 1:
-                await c.send('KABOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM')
+                await c.send('KABOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM') 
                 await c.send('YOU ARE DEAD')
                 return
             arg = arg - 1
