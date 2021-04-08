@@ -4,7 +4,7 @@ class SelfDestruct(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(brief = "Self-Destruct on given time in mentioned or else default to 10")
     async def self_destruct(self,c,arg=10):
         await c.send('Initiating Self-Destruct sequence')
         i = arg
